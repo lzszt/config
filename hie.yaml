@@ -1,0 +1,6 @@
+cradle:
+  cabal:
+    - path: "src"
+      component: "config:lib:config"
+    - path: "test"
+      component: "config:test:config-test"

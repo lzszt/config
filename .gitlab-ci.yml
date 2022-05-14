@@ -1,0 +1,17 @@
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  before_script:
+    - . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+  script:
+    - nix-shell --pure --run "cabal build all"
+
+# test:
+#   stage: test
+#   before_script:
+#     - . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+#   script:
+#     - nix-shell --pure --run "cabal test all"
