@@ -14,6 +14,7 @@ module Config.HKD
     Complete,
     dynamic,
     genericApply,
+    HKD,
   )
 where
 
