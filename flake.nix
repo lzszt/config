@@ -7,14 +7,16 @@
       flake = false;
     };
   };
-  outputs = { self, nixpkgs, ... }:
+  outputs =
+    { self, nixpkgs, ... }:
     let
       pkgs = import ./nix/pkgs.nix {
         inherit nixpkgs;
         system = "x86_64-linux";
       };
       packageName = "config";
-    in {
+    in
+    {
       packages.x86_64-linux.${packageName} = pkgs.haskellPackages.config;
       defaultPackage.x86_64-linux = self.packages.x86_64-linux.${packageName};
       devShells.x86_64-linux = {
